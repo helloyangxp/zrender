@@ -28,7 +28,7 @@ var instances = {};    // ZRender实例map索引
 /**
  * @type {string}
  */
-export var version = '3.7.4';
+export var version = '4.0.1';
 
 /**
  * Initializing a zrender instance
@@ -125,7 +125,7 @@ var ZRender = function (id, dom, opts) {
     else if (!rendererType || !painterCtors[rendererType]) {
         rendererType = 'canvas';
     }
-    var painter = new painterCtors[rendererType](dom, storage, opts);
+    var painter = new painterCtors[rendererType](dom, storage, opts, id);
 
     this.storage = storage;
     this.painter = painter;
